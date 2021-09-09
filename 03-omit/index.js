@@ -5,5 +5,8 @@
  * @returns {object} - returns the new object
  */
 export const omit = (obj, ...fields) => {
-
+    return fields.reduce((a, x) => {
+        if(obj.hasOwnProperty(x)) a[x] != obj[x];
+        return a;
+    }, {});
 };
